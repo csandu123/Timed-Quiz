@@ -1,28 +1,28 @@
 const quizData = [
     {
-        question: "Which language runs in a web browser?",
-        a: "Java",
-        b: "C",
-        c: "Python",
-        d: "javascript",
+        question: "Who invented Javascript?",
+        a: "Bill Gates",
+        b: "Paul Walker",
+        c: "Reese Whitherspoon    ",
+        d: "Brendan Eich",
         correct: "d",
         wrong: "a b c",
     },
     {
-        question: "What does CSS stand for?",
-        a: "Central Style Sheets",
-        b: "Cascading Style Sheets",
-        c: "Cascading Simple Sheets",
-        d: "Cars SUVs Sailboats",
+        question: "What is used to define true or false?",
+        a: "String",
+        b: "Boolean",
+        c: "Array",
+        d: "Variable",
         correct: "b",
         wrong: "a c d",
     },
     {
-        question: "What does HTML stand for?",
-        a: "Hypertext Markup Language",
-        b: "Hypertext Markdown Language",
-        c: "Hyperloop Machine Language",
-        d: "Helicopters Terminals Motorboats Lamborginis",
+        question: "How do you define a string?",
+        a: "Quotations",
+        b: "Brackets",
+        c: "Parentheses",
+        d: "Forward Slashes",
         correct: "a",
         wrong: "b c d",
     },
@@ -81,6 +81,9 @@ function updateTime() {
     let seconds = time % 60;
     countdown.innerHTML = `${minutes} : ${seconds}`;
     time--;
+    if (seconds < 0) {
+        alert("Time is up!")
+    }
 }
 
 setInterval(updateTime, 1000);
@@ -95,9 +98,6 @@ function getSelected() {
     return answer
 }
 
-function wrongAnswer() {
-
-}
 
 submitBtn.addEventListener('click', () => {
     const minutes = Math.floor(time / 60);
